@@ -1,5 +1,4 @@
 const rwClient = require("./twitterClient");
-const cronJob = require("cron").CronJob;
 
 const tweet = async () =>{
 
@@ -17,12 +16,10 @@ const tweet = async () =>{
     }
 }
 
-const job = new cronJob(" * 00 12 * * *" , () =>{
-    tweet()
-    job.stop()
-});
+tweet()
 
-job.start();
+
+
 
 
 
